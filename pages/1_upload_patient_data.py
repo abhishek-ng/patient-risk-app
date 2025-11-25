@@ -45,4 +45,3 @@ if st.button('Load Demo Dataset'):
   })
   st.session_state['raw_data']=df
   st.success('Demo dataset loaded into session state')
-  st.rerun()
