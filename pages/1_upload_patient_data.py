@@ -37,7 +37,7 @@ if uploaded is not None:
                 time.sleep(3)
 
             st.toast("Redirecting to next step...", icon="➡️")
-            st.switch_page("2_clean_and_explore_data")
+            st.switch_page("2_clean_and_explore_data.py")
 
     except Exception as e:
         st.error("Failed to read file. Check format.")
@@ -67,5 +67,4 @@ if st.button("Load Demo Dataset"):
     with st.spinner("Loading demo dataset..."):
         time.sleep(3)
 
-    st.toast("Redirecting to next step...", icon="➡️")
-    st.switch_page("2_clean_and_explore_data")
+    st.switch_page("2_clean_and_explore_data.py")
