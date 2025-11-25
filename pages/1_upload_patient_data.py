@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 st.set_page_config(page_title='Upload Patient Data')
 st.title('1. Upload Patient Data')
 
-st.write("Upload a CSV or Excel file with patient records. The app expects columns like:")
-st.write("`patient_id, name, age, gender, bmi, systolic_bp, diastolic_bp, cholesterol, diabetes` (optional)")
+st.write("Upload a CSV or Excel file with patient records. Expected columns:")
+st.write("`patient_id, name, age, gender, bmi, systolic_bp, diastolic_bp, cholesterol, diabetes`")
 
 uploaded = st.file_uploader("Choose a CSV or Excel file", type=["csv", "xlsx"])
 
@@ -28,14 +29,18 @@ if uploaded is not None:
 
         st.markdown("---")
 
+        # 🎯 Save + Loading animation + Redirect
         if st.button("Save and Continue"):
             st.session_state["data_uploaded"] = True
-            st.query_params = {"page": "Clean_and_Explore_Data"}
-            st.success("Redirecting to next step...")
-            st.rerun()
+
+            with st.spinner("Saving data and preparing next step..."):
+                time.sleep(3)
+
+            st.toast("Redirecting to next step...", icon="➡️")
+            st.switch_page("2_Clean_and_Explore_Data")
 
     except Exception as e:
-        st.error("Failed to read file. Make sure it is a valid CSV/XLSX and has a proper header row.")
+        st.error("Failed to read file. Check format.")
         st.exception(e)
 
 else:
@@ -59,6 +64,8 @@ if st.button("Load Demo Dataset"):
 
     st.session_state["raw_data"] = df
 
-    st.success("Demo dataset loaded. Redirecting to next step...")
-    st.switch_page("pages/2_clean_and_explore_data.py")
+    with st.spinner("Loading demo dataset..."):
+        time.sleep(3)
 
+    st.toast("Redirecting to next step...", icon="➡️")
+    st.switch_page("2_Clean_and_Explore_Data")
