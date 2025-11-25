@@ -58,7 +58,6 @@ if submitted:
     st.session_state["clean_data"] = df
     st.success("Cleaning applied and saved to session as `clean_data`.")
 
-    st.rerun()   # NEW API
 
 st.markdown("---")
 
