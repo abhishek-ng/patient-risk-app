@@ -49,5 +49,5 @@ if "clean_data" in st.session_state:
 
 
   if st.button("Use cleaned data for analysis"):
-  st.session_state["use_clean_for_analysis"] = True
-  st.success("Clean data will be used in Risk Analysis page.")
+    st.session_state["use_clean_for_analysis"] = True
+    st.success("Clean data will be used in Risk Analysis page.")
