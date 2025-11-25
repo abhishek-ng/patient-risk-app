@@ -63,4 +63,4 @@ if st.button("Load Demo Dataset"):
     })
 
     st.session_state["raw_data"] = df
-    st.switch_page("clean_and_explore_data.py")
+    st.switch_page("2_clean_and_explore_data.py")
