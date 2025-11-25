@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.page_confg(page_title='Upload Patient Data')
+st.page_config(page_title='Upload Patient Data')
 st.title('1. Upload patient Data')
 st.write('Upload a CSV or Excel file with patient records. The app expects column like:')
 st.write('`patient_id, name, age, gender, bmi, systolic_bp, diastolic_bp, cholesterol, diabetes` (optional)')
