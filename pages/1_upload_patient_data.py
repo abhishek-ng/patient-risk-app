@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 st.set_page_config(page_title='Upload Patient Data')
 st.title('1. Upload Patient Data')
@@ -32,7 +33,10 @@ if uploaded is not None:
         if st.button("Save and Continue"):
             st.session_state["data_uploaded"] = True
 
-            st.switch_page('pages/2_clean_and_explore_data.py')
+            with st.spinner("Saving data and preparing next step..."):
+                time.sleep(3)
+
+            st.switch_page("pages/2_clean_and_explore_data.py")
 
     except Exception as e:
         st.error("Failed to read file. Check format.")
@@ -59,4 +63,7 @@ if st.button("Load Demo Dataset"):
 
     st.session_state["raw_data"] = df
 
-    st.switch_page('pages/2_clean_and_explore_data.py')
+    with st.spinner("Loading demo dataset..."):
+        time.sleep(2)
+
+    st.switch_page("pages/2_clean_and_explore_data.py")
