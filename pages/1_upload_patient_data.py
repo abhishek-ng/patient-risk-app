@@ -68,4 +68,4 @@ if st.button("Load Demo Dataset"):
         time.sleep(3)
 
     st.toast("Redirecting to next step...", icon="➡️")
-    st.switch_page("2_Clean_and_Explore_Data")
+    st.switch_page("2_clean_and_explore_data")
