@@ -63,9 +63,4 @@ if st.button("Load Demo Dataset"):
     })
 
     st.session_state["raw_data"] = df
-
-    with st.spinner("Loading demo dataset..."):
-        time.sleep(3)
-
-    st.toast("Redirecting to next step...", icon="➡️")
     st.switch_page("2_clean_and_explore_data.py")
