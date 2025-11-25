@@ -44,4 +44,8 @@ if st.button('Load Demo Dataset'):
   "diabetes": np.random.choice([0,1], size=100, p=[0.85,0.15])
   })
   st.session_state['raw_data']=df
-  st.success('Demo dataset loaded into session state')
+  st.success('Demo dataset loaded into session state. Redirecting to next step...")
+    
+  # Redirect to next page
+  st.query_params = {"page": "clean and explore data"}
+  st.rerun()
