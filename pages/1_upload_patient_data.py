@@ -60,7 +60,5 @@ if st.button("Load Demo Dataset"):
     st.session_state["raw_data"] = df
 
     st.success("Demo dataset loaded. Redirecting to next step...")
+    st.switch_page("pages/2_Clean_and_Explore_Data.py")
 
-    # REDIRECT → ensure page name EXACTLY matches browser URL
-    st.query_params = {"page": "clean_and_explore_data"}
-    st.rerun()
