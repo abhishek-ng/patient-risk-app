@@ -60,5 +60,5 @@ if st.button("Load Demo Dataset"):
     st.session_state["raw_data"] = df
 
     st.success("Demo dataset loaded. Redirecting to next step...")
-    st.switch_page("pages/2_Clean_and_Explore_Data.py")
+    st.switch_page("pages/2_clean_and_explore_data.py")
 
