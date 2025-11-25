@@ -62,4 +62,4 @@ if st.button("Load Demo Dataset"):
     st.success("Demo dataset loaded. Redirecting to next step...")
 
     # REDIRECT → ensure page name EXACTLY matches browser URL
-    st.query_params = {"page": "Clean_and_Explore_Data"}
+    st.query_params = {"page": "2_clean_and_explore_data"}
