@@ -32,7 +32,7 @@ if uploaded is not None:
         if st.button("Save and Continue"):
             st.session_state["data_uploaded"] = True
 
-            st.switch_page('clean_and_explore_data.py')
+            st.switch_page('clean_and_explore_data')
 
     except Exception as e:
         st.error("Failed to read file. Check format.")
@@ -59,4 +59,4 @@ if st.button("Load Demo Dataset"):
 
     st.session_state["raw_data"] = df
 
-    st.switch_page('clean_and_explore_data.py')
+    st.switch_page('clean_and_explore_data')
